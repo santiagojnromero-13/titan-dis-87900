@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: #DFB88B;
+  ;
+
+}
+
+.logo {
+  width: 8%;
+}
+
+.logo img {
+  width: 80%;
+}
+
+ul {
+  list-style: none;
+}
+
+li>a {
+  color: black;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+
+#fondo-principal {
+  background-image: url(../assets/img/combo_1.jpeg);
+  height: 400px;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#fondo-principal .hero-txt {
+  background-color: rgba(250, 250, 248, 0.685);
+  width: 500px;
+  padding: 25px;
+  margin-right: 20px;
+  text-align: center;
+}
+
+
+.fa-instagram {
+  color: brown;
+  font-size: 100%;
+}
+
+
+.fa-youtube {
+  color: brown;
+  font-size: 100%;
+
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+h2 {
+  color: blueviolet;
+  text-align: center;
+
+}
+
+h3 {
+  color: rgb(54, 141, 218);
+  font-size: 20px;
+  text-align: center;
+}
+
+.subrayado {
+  text-decoration: rgb(76, 23, 199) 4px underline;
+
+}
+
+
+.carrito {
+
+  width: 350;
+  height: 350;
+
+
+}
+
+header,
+footer {
+  background-color: rgba(204, 204, 188, 0.459);
+}
+
+header {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+}
+
+nav {
+
+  width: 50%
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5%;
+}
+
+.title span {
+  font-weight: 600;
+  color: rgb(54, 54, 56);
+}
+
+.interlineado {
+  line-height: 2;
+}
+
+.carrito {
+  width: 450px;
+  height: 500px;
+}
+
+.title-nuestros-mates {
+  color: black;
+  font-size: 30px;
+}
+
+.nuestros-mates {
+  margin: 25px 0;
+  padding: 7px;
+}
+
+.nuestros-mates h2 {
+  font-size: 2.75rem;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.nuestros-mates .card {
+  width: 400px;
+  border: 1px solid #75dd30;
+  margin: 15px;
+}
+
+.nuestros-mates div img {
+  width: 100%;
+}
+
+.nuestros-mates div h3 {
+  padding: 5px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: rgb(54, 141, 218);
+}
+
+
+.nuestros-mates div p {
+  margin: 15px 5px;
+
+}
+
+
+/* GRID AREA CARRITO */
+
+.grid-area {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1.5fr) 3fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    "mate-arg-qatar mate-boca mate-boca mate-disney"
+    "termo-dimaria mate-boca mate-boca combo-2"
+    "termo-dimaria mate-boca mate-boca combo-2"
+  ;
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  gap: 10px;
+  position: relative;
+  background-color: #3f60cfd4;
+  padding: 7px;
+}
+
+
+.grid-area img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.grid-area .mate-boca {
+  grid-area: mate-boca;
+}
+
+.grid-area .termo-dimaria {
+  grid-area: termo-dimaria;
+
+}
+
+.grid-area .mate-arg-quatar {
+  grid-area: mate-arg-quatar;
+}
+
+.grid-area .mate-disney {
+  grid-area: mate-disney;
+  object-position: center top;
+}
+
+
+
+.grid-area .combo-2 {
+  grid-area: combo-2;
+}
+
+
+
+/*  GRID LINE MATES 
+
+
+        .nuestros-mates .grid-line {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr) minmax(400px,2fr);
+            grid-template-rows:  1fr;
+              width: 90vw;
+  margin: 0 auto;
+  gap: 10px;
+  background-color: #07886c;
+  justify-items: center;
+  padding: 10px;
+   
+        }
+          
+      .nuestros-mates .grid-line .card.deporte {
+grid-column: 1/2;
+grid-row: 1/2;
+      }  
+
+      .nuestros-mates .grid-line .card.bandas {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      .nuestros-mates .grid-line .card.pelicula{
+        grid-column: 3/4;
+        grid-row: 1/2;
+
+      }
+
+      .nuestros-mates .grid-line .card.dias-especiales{
+
+    grid-column: 4/5;
+    grid-row: 1/2;
+      }
+    
+*/
+
+.nuestros-mates .row {
+  row-gap: 20px;
+  width: 80vw;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img-ajuste {
+  height: 50%;
+  object-fit: cover;
+}
+
+.row .col-12:nth-child(7) .card-img-top {
+  object-position: 0 -62px;
+}
+
+.row .col-12:nth-child(3) .card-img-top {
+  object-position: top;
+}
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE*/
+
+@media screen and (max-width: 768px) {
+  header nav.desktop {
+    display: none;
+  }
+}
+
+
+.grid-area {
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "mate-boca"
+    "termo-dimaria"
+    "mate-arg-qat"
+    "mate-disney"
+    "combo-2";
+
+  width: 20vw;
+  height: auto;
+  margin: 0 auto;
+  gap: 10px;
+  position: relative;
+}
