@@ -1,98 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARRITO</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CARRITO • TITAN DISEÑOS</title>
 
+  <meta name="description" content="Carrito de compras de TITAN Diseños. Mates personalizados, termos y combos para regalos empresariales." />
 
-    <script src="https://kit.fontawesome.com/ea62e41548.js" crossorigin="anonymous"></script>
+  <!-- Iconos -->
+  <script src="https://kit.fontawesome.com/ea62e41548.js" crossorigin="anonymous"></script>
 
-    <!--BOOTSTRAP-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="../css/styles.css">
+  <!-- Tus CSS -->
+  
+  <link rel="stylesheet" href="../css/estilos.css" />
 
+  <style>
+    :root{
+      --card-radius: 16px;
+      --card-shadow: 0 6px 20px rgba(0,0,0,.08);
+      --card-shadow-hover: 0 10px 28px rgba(0,0,0,.12);
+      --gap: 1.25rem;
+    }
 
-    <link rel="stylesheet" href="../css/estilos.css">
+    /* 🔹 Botón hamburguesa personalizado */
+    .custom-toggler { border: none; }
+    .custom-toggler:focus { box-shadow: none; }
+    .custom-toggler .toggler-icon {
+      display: block; width: 24px; height: 2px; margin: 5px 0;
+      background-color: #000; transition: .3s;
+    }
+
+    /* 🔹 Grid moderno con última fila centrada */
+    .grid-area{
+      display: grid;
+      gap: var(--gap);
+      width: 100%;
+      justify-content: center; /* centra la última fila cuando no hay 3 elementos */
+    }
+    /* 1 col: móviles */
+    @media (max-width: 575.98px){
+      .grid-area{ grid-template-columns: minmax(260px, 1fr); }
+    }
+    /* 2 cols: tablets */
+    @media (min-width: 576px) and (max-width: 991.98px){
+      .grid-area{ grid-template-columns: repeat(2, minmax(260px, 1fr)); }
+    }
+    /* 3 cols: escritorio */
+    @media (min-width: 992px){
+      .grid-area{ grid-template-columns: repeat(3, minmax(260px, 1fr)); }
+    }
+
+    /* 🔹 Tarjetas limpias y consistentes */
+    .product{
+      background: #fff;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .product:hover{
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+    .product img{
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;  /* tiles cuadrados */
+      object-fit: cover;    /* recorte prolijo */
+    }
+
+    /* Respeta usuario con menos animación */
+    @media (prefers-reduced-motion: reduce){
+      .product, .product img { transition: none; }
+    }
+  </style>
 </head>
-
 <body>
+  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
+  <!-- HEADER claro, ancho completo -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm w-100">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="Ir al inicio">
+          <!-- Sugerencia: renombrar el archivo a 'logo-titan.svg' (sin espacios) -->
+          <img src="../assets/img/Logo-titan svg.svg" alt="Logo TITAN Diseños" height="48" />
+        </a>
 
-    <header>
-        <div class="logo">
-            <img src="../assets/img/Logo-titan svg.svg" alt="logo titan dis">
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuHeader"
+          aria-controls="menuHeader" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuHeader">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link active subrayado" aria-current="page" href="#">CARRITO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mates.html">MATES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./regalos-empresatiales.html">REGALOS EMPRESARIALES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./registro.html">REGISTRO</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="contenido" class="pb-5">
+    <section class="container-fluid py-4">
+      <h1 class="fw-bold mb-4 text-center">CARRITO</h1>
+
+      <!--  Grid prolijo -->
+      <section class="grid-area">
+        <figure class="product">
+          <img src="../assets/img/mate_boca.jpeg" alt="Mate personalizado de Boca Juniors" />
+        </figure>
+        <figure class="product">
+          <img src="../assets/img/termo_dimaria.jpeg" alt="Termo personalizado Di María" />
+        </figure>
+        <figure class="product">
+          <img src="../assets/img/mate_arg_qatar.jpeg" alt="Mate Argentina Qatar" />
+        </figure>
+        <figure class="product">
+          <img src="../assets/img/mate_disney.jpeg" alt="Mate tema Disney" />
+        </figure>
+        <figure class="product">
+          <img src="../assets/img/combo_2.jpeg" alt="Combo matero 2" />
+        </figure>
+        <figure class="product">
+          <img src="../assets/img/mate_maradona.jpeg" alt="mate maradona" />
+        </figure>
+        
+      </section>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto py-4 border-top bg-light w-100">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center gap-3 fs-4">
+          <a href="https://www.instagram.com/titan_dis/?next=%2F" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram" aria-label="Instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCMlX-1X2raYXqAPegqYwlgQ" target="_blank" rel="noopener">
+            <i class="fa-brands fa-youtube" aria-label="YouTube"></i>
+          </a>
         </div>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="../Index.html">INICIO</a>
-                </li>
-                <li>
-                    <a class="subrayado" href="#">CARRITO</a>
-                </li>
-                <li>
-                    <a href="./mates.html">MATES</a>
-                </li>
-                <li><a href="./regalos-empresatiales.html">REGALOS EMPRESARIALES</a>
-                </li>
-                <li><a href="./registro.html">REGISTRO</a>
-                </li>
-            </ul>
-        </nav>
+        <button class="navbar-toggler custom-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#menuFooter"
+          aria-controls="menuFooter" aria-expanded="false" aria-label="Abrir menú del pie de página">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
 
-    </header>
-    <h1>CARRITO</h1>
-
-
-
-    <main>
-        <section class="grid-area">
-            <img class="mate-boca" src="../assets/img/mate_boca.jpeg" alt="mate boca 1">
-            <img class="termo-dimaria" src="../assets/img/termo_dimaria.jpeg" alt="termo dimaria">
-            <img class="mate-arg-qatar" src="../assets/img/mate_arg_qatar.jpeg" alt="mate arg qatar">
-            <img class="mete-disney" src="../assets/img/mate_disney.jpeg" alt="mate disney">
-            <img class="combo-2" src="../assets/img/combo_2.jpeg" alt="combo 2">
-
-
-        </section>
-
-
-
-
-
-    </main>
-    <footer>
-        <div>
-            <a href="https://www.instagram.com/titan_dis/?next=%2F" target="_blank"> <i
-                    class="fa-brands fa-instagram"></i> </a>
-            <a href="https://www.youtube.com/channel/UCMlX-1X2raYXqAPegqYwlgQ" target="_blank"> <i
-                    class="fa-brands fa-youtube"></i></a>
+        <div class="collapse navbar-collapse" id="menuFooter">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link active subrayado" aria-current="page" href="#">CARRITO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mates.html">MATES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./regalos-empresariales.html">REGALOS EMPRESARIALES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./registro.html">REGISTRO</a></li>
+          </ul>
         </div>
-        <div>
-            <ul>
-                <li>
-                    <a href="../Index.html">INICIO</a>
-                </li>
-                <li>
-                    <a class="subrayado" href="#">CARRITO</a>
-                </li>
-                <li>
-                    <a href="./pages/mates.html">MATES</a>
-                </li>
-                <li><a href="./pages/regalos-empresatiales.html">REGALOS EMPRESARIALES</a></li>
-                <li><a href="./pages/registro.html">REGISTRO</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+      </div>
+    </nav>
+  </footer>
 
-<!-- BOOTSTRAP SCRIPT-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

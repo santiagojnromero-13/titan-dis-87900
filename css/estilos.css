@@ -1,17 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 ul {
   list-style: none;
-}
-
-li > a {
-  color: black;
-  text-decoration: none;
-  font-size: 15px;
 }
 
 body {
@@ -21,17 +15,17 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: #DFB88B;
+  text-decoration: none;
 }
 
 h1 {
-  color: black;
+  color: #000;
   text-align: center;
 }
 
 h2 {
-  color: blueviolet;
+  color: rgb(220, 226, 43);
   text-align: center;
 }
 
@@ -41,15 +35,46 @@ h3 {
   text-align: center;
 }
 
-nav {
-  width: 50%;
+.subrayado {
+  text-decoration: rgb(76, 23, 199) 4px underline;
 }
 
-ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 5%;
+.interlineado {
+  line-height: 2;
+}
+
+.logo {
+  width: 8%;
+}
+.logo img {
+  width: 80%;
+}
+
+li > a {
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+  font-size: 50px;
+  font-weight: 500;
+}
+.title span {
+  font-weight: 600;
+  color: rgb(54, 54, 56);
+}
+
+.fa-instagram,
+.fa-youtube {
+  color: brown;
+  font-size: 1em;
+}
+
+.carrito {
+  width: 450px;
+  height: 500px;
 }
 
 header,
@@ -57,32 +82,180 @@ footer {
   background-color: rgba(204, 204, 188, 0.459);
 }
 
-.subrayado {
-  text-decoration: rgb(76, 23, 199) 4px underline;
-}
-
-.title span {
-  font-weight: 600;
-  color: rgb(54, 54, 56);
-}
-
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: sticky;
   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
 }
+header nav {
+  width: 50%;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5%;
+}
 
-header .logo {
-  width: 8%;
+#fondo-principal {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: center/cover repeat url(../assets/img/combo_1.jpeg);
 }
-header img {
-  width: 80%;
+#fondo-principal .hero-txt {
+  width: 500px;
+  margin-right: 20px;
+  padding: 25px;
+  text-align: center;
+  background-color: rgba(250, 250, 248, 0.685);
 }
-header .subrayado {
-  text-decoration: rgb(76, 23, 199) 4px underline;
+
+.title-nuestros-mates {
+  color: #000;
+  font-size: 30px;
+}
+
+.nuestros-mates {
+  margin: 25px 0;
+  padding: 7px;
+}
+.nuestros-mates h2 {
+  margin: 15px 0;
+  padding: 10px;
+  font-size: 2.75rem;
+}
+.nuestros-mates .card {
+  width: 400px;
+  margin: 15px;
+  border: 1px solid #75dd30;
+}
+.nuestros-mates div img {
+  width: 100%;
+}
+.nuestros-mates div h3 {
+  padding: 5px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: rgb(54, 141, 218);
+}
+.nuestros-mates div p {
+  margin: 15px 5px;
+}
+.nuestros-mates .row {
+  width: 80vw;
+  row-gap: 20px;
+}
+
+.grid-area {
+  display: grid;
+  width: 80vw;
+  height: 80vh;
+  margin: 0 auto;
+  gap: 10px;
+  position: relative;
+  padding: 7px;
+  background-color: rgba(63, 96, 207, 0.831372549);
+  grid-template-columns: 2fr repeat(2, 1.5fr) 3fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "mate-arg-qatar mate-boca mate-boca mate-disney" "termo-dimaria   mate-boca mate-boca combo-2" "termo-dimaria   mate-boca mate-boca combo-2";
+}
+.grid-area img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+.grid-area .mate-boca {
+  grid-area: mate-boca;
+}
+.grid-area .termo-dimaria {
+  grid-area: termo-dimaria;
+}
+.grid-area .mate-arg-qatar {
+  grid-area: mate-arg-qatar;
+}
+.grid-area .mate-disney {
+  grid-area: mate-disney;
+  object-position: center top;
+}
+.grid-area .combo-2 {
+  grid-area: combo-2;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img-ajuste {
+  height: 50%;
+  object-fit: cover;
+}
+
+.row .col-12:nth-child(7) .card-img-top {
+  object-position: 0 -62px;
+}
+.row .col-12:nth-child(3) .card-img-top {
+  object-position: top;
+}
+
+@media screen and (max-width: 768px) {
+  header .desktop {
+    display: none;
+  }
+  .grid-area {
+    width: 90vw;
+    height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "mate-boca" "termo-dimaria" "mate-arg-qatar" "mate-disney" "combo-2";
+  }
+}
+.grid-area {
+  background: transparent !important;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  gap: 1.25rem;
+  grid-template-columns: minmax(260px, 1fr);
+}
+
+@media (min-width: 576px) {
+  .grid-area {
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+  }
+}
+@media (min-width: 992px) {
+  .grid-area {
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+.grid-area img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-area img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.grid-area,
+.grid-area img {
+  aspect-ratio: 1/1;
 }
 
 /*# sourceMappingURL=estilos.css.map */

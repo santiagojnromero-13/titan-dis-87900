@@ -1,149 +1,178 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CARRITO</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REGISTRO • TITAN DISEÑOS</title>
 
-    <script src="https://kit.fontawesome.com/ea62e41548.js" crossorigin="anonymous"></script>
+  <meta name="description" content="Creá tu cuenta en TITAN Diseños para comprar mates personalizados, combos y regalos empresariales." />
 
-    <!--BOOTSTRAP-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <!-- Iconos -->
+  <script src="https://kit.fontawesome.com/ea62e41548.js" crossorigin="anonymous"></script>
 
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" href="../css/styles.css">
+  <!-- Tus CSS -->
+  
+  <link rel="stylesheet" href="../css/estilos.css" />
 
-    <link rel="stylesheet" href="../css/estilos.css">
+  <style>
+    /* 🔹 Botón hamburguesa personalizado (header y footer) */
+    .custom-toggler{border:none;}
+    .custom-toggler:focus{box-shadow:none;}
+    .custom-toggler .toggler-icon{
+      display:block;width:24px;height:2px;margin:5px 0;background:#000;transition:.3s;
+    }
+    /* 🔹 Caja del formulario con leve realce */
+    .form-wrapper{
+      background:#fff;border:1px solid #e9ecef;border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,.06);
+    }
+  </style>
 </head>
-
 <body>
+  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
-    <header>
-        <div class="logo">
-            <img src="../assets/img/Logo-titan svg.svg" alt="logo titan dis">
+  <!-- HEADER (claro, ancho completo, hamburguesa) -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm w-100">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="Ir al inicio">
+          <!-- Sugerencia: renombrar el archivo a 'logo-titan.svg' (sin espacios) -->
+          <img src="../assets/img/Logo-titan svg.svg" alt="Logo TITAN Diseños" height="48" />
+        </a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuHeader"
+          aria-controls="menuHeader" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuHeader">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./carrito.html">CARRITO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mates.html">MATES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./regalos-empresatiales.html">REGALOS EMPRESARIALES</a></li>
+            <li class="nav-item"><a class="nav-link active subrayado" aria-current="page" href="#">REGISTRO</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
+  </header>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="../Index.html">INICIO</a>
-                </li>
-                <li>
-                    <a href="./carrito.html">CARRITO</a>
-                </li>
-                <li>
-                    <a href="./mates.html">MATES</a>
-                </li>
-                <li><a href="./regalos-empresatiales.html">REGALOS EMPRESARIALES</a>
-                </li>
-                <li><a class="subrayado" href="./registro.html">REGISTRO</a>
-                </li>
-            </ul>
-        </nav>
+  <!-- MAIN -->
+  <main id="contenido" class="pb-5">
+    <section class="container text-center py-5">
+      <h1 class="fw-bold mb-2">REGISTRO</h1>
+      <p class="text-muted mb-0">Completá tus datos para crear tu cuenta.</p>
+    </section>
 
-    </header>
-    <h1>REGISTRO</h1>
+    <section class="container pb-5">
+      <div class="form-wrapper p-4 p-md-5">
+        <form class="row g-3" novalidate>
+          <!-- Nombre y Apellido -->
+          <div class="col-md-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ej: Juan" required />
+          </div>
+          <div class="col-md-6">
+            <label for="apellido" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Ej: Pérez" required />
+          </div>
 
+          <!-- Fecha de nacimiento -->
+          <div class="col-md-6">
+            <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="DD-MM-AAAA" />
+          </div>
 
-    <div class="container">
-        <form class="row g-4 mt-3">
-            <div class="col-4">
-                <label for="nombre-input" class="form-lebel" ></label>
-                <input type="Nombre" class="form-control" id="nombre-input" placeholder="NOMBRE">
-            </div>
+          <!-- Email y Contraseña -->
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="col-md-6">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" required />
+          </div>
+          <div class="col-md-6">
+            <label for="password2" class="form-label">Repetir contraseña</label>
+            <input type="password" class="form-control" id="password2" name="password2" placeholder="Reingresá tu contraseña" minlength="8" required />
+          </div>
 
-            <div class="col-4">
-                <label for="apellido-input" class="form-lebel" ></label>
-                <input type="Apellido" class="form-control" id="apellido-input" placeholder="APELLIDO">
-            </div>
+          <!-- Dirección -->
+          <div class="col-12">
+            <label for="direccion" class="form-label">Dirección</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Calle y número" />
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="numero" class="form-label">Número</label>
+            <input type="text" class="form-control" id="numero" name="numero" inputmode="numeric" placeholder="1234" />
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="piso" class="form-label">Piso</label>
+            <input type="text" class="form-control" id="piso" name="piso" placeholder="Ej: 3" />
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="depto" class="form-label">Dpto</label>
+            <input type="text" class="form-control" id="depto" name="depto" placeholder="Ej: B" />
+          </div>
+          <div class="col-6 col-md-3">
+            <label for="cp" class="form-label">Código Postal</label>
+            <input type="text" class="form-control" id="cp" name="cp" inputmode="numeric" placeholder="C.P." />
+          </div>
 
-             <div class="col-4">
-                <label for="fecha-de-nacimiento-input" class="form-lebel" A></label>
-                <input type="fecha-de-nacimiento" class="form-control" id="fecha-de-nacimiento-inputt" placeholder="DD-MM-AAAA">
-            </div>
-             <div class="col-4">
-                <label for="direccio-input" class="form-lebel" ></label>
-                <input type="direccion" class="form-control" id="direccio-inputt" placeholder="DIRECCION">
-            </div>
-             <div class="col-2">
-                <label for="cp-input" class="form-lebel" ></label>
-                <input type="cp" class="form-control" id="cp-inputt" placeholder="C.P">
-            </div>
+          <!-- Ciudad -->
+          <div class="col-md-6">
+            <label for="ciudad" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ej: Buenos Aires" />
+          </div>
 
-              <div class="col-2">
-                <label for="numero-input" class="form-lebel" ></label>
-                <input type="numero" class="form-control" id="numero-inputt" placeholder="NUMERO">
-            </div>
-
-             <div class="col-2">
-                <label for="piso-input" class="form-lebel" ></label>
-                <input type="piso" class="form-control" id="piso-inputt" placeholder="PISO">
-            </div>
-             <div class="col-2">
-                <label for="depto-input" class="form-lebel" ></label>
-                <input type="depto" class="form-control" id="depto-inputt" placeholder="DPTO">
-            </div>
-
-             <div class="col-4">
-                <label for="email-input" class="form-lebel" ></label>
-                <input type="email" class="form-control" id="email-inputt" placeholder="EMAIL">
-            </div>
-               <div class="col-4">
-                <label for="contraseña-input" class="form-lebel" ></label>
-                <input type="contraseña" class="form-control" id="contraseña-inputt" placeholder="CONTRASEÑA">
-            </div>
-
-            <div class="col-12" style="text-align: center;">
-                <button type="submit" class="btn btn-primary">
-                    REGISTRATE
-
-                </button>
-            </div>
-
-
-
-
-
-
-
+          <!-- Botón -->
+          <div class="col-12 text-center pt-2">
+            <button type="submit" class="btn btn-primary px-4">REGISTRATE</button>
+          </div>
         </form>
+      </div>
+    </section>
+  </main>
 
-    </div>
-
-    
-    <main>
-
-
-    </main>
-    <footer>
-        <div>
-            <a href="https://www.instagram.com/titan_dis/?next=%2F" target="_blank"> <i
-                    class="fa-brands fa-instagram"></i> </a>
-            <a href="https://www.youtube.com/channel/UCMlX-1X2raYXqAPegqYwlgQ" target="_blank"> <i
-                    class="fa-brands fa-youtube"></i></a>
+  <!-- FOOTER (ancho completo, menú a la derecha) -->
+  <footer class="mt-auto py-4 border-top bg-light w-100">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <!-- Redes -->
+        <div class="d-flex align-items-center gap-3 fs-4">
+          <a href="https://www.instagram.com/titan_dis/?next=%2F" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram" aria-label="Instagram"></i>
+          </a>
+        <a href="https://www.youtube.com/channel/UCMlX-1X2raYXqAPegqYwlgQ" target="_blank" rel="noopener">
+            <i class="fa-brands fa-youtube" aria-label="YouTube"></i>
+          </a>
         </div>
-        <div>
-            <ul>
-                <li>
-                    <a href="#">INICIO</a>
-                </li>
-                <li>
-                    <a href="./pages/carrito.html">CARRITO</a>
-                </li>
-                <li>
-                    <a href="./pages/mates.html">MATES</a>
-                </li>
-                <li><a href="./pages/regalos-empresatiales.html">REGALOS EMPRESARIALES</a></li>
-                <li><a class="subrayado" href="./pages/registro.html">REGISTRO</a>
-                </li>
-            </ul>
+
+        <!-- Hamburguesa footer -->
+        <button class="navbar-toggler custom-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#menuFooter"
+          aria-controls="menuFooter" aria-expanded="false" aria-label="Abrir menú del pie de página">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
+
+        <!-- Menú -->
+        <div class="collapse navbar-collapse" id="menuFooter">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./carrito.html">CARRITO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mates.html">MATES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./regalos-empresariales.html">REGALOS EMPRESARIALES</a></li>
+            <li class="nav-item"><a class="nav-link active subrayado" aria-current="page" href="#">REGISTRO</a></li>
+          </ul>
         </div>
-    </footer>
+      </div>
+    </nav>
+  </footer>
 
-    <!-- BOOTSTRAP SCRIPT-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

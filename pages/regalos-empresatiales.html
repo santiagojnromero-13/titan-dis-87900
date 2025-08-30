@@ -1,173 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGALOS EMPRESARIALES</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>REGALOS EMPRESARIALES • TITAN DISEÑOS</title>
 
+  <meta name="description" content="Regalos empresariales personalizados: combos, termos, mates y packs corporativos para tu marca. Pedí tu presupuesto." />
 
-    <script src="https://kit.fontawesome.com/ea62e41548.js" crossorigin="anonymous"></script>
+  <!-- Iconos -->
+  <script src="https://kit.fontawesome.com/ea62e41548.js" crossorigin="anonymous"></script>
 
-    <!--BOOTSTRAP-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" />
 
+  <!-- Tus CSS -->
+  
+  <link rel="stylesheet" href="../css/estilos.css" />
 
-    <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    /* 🔹 Botón hamburguesa personalizado */
+    .custom-toggler{border:none;}
+    .custom-toggler:focus{box-shadow:none;}
+    .custom-toggler .toggler-icon{
+      display:block;width:24px;height:2px;margin:5px 0;background:#000;transition:.3s;
+    }
 
-    <link rel="stylesheet" href="../css/estilos.css">
+    /* 🔹 Fondo del formulario */
+    .form-section {
+      background: url("../assets/img/combo_2.jpeg") no-repeat center center/cover;
+      padding: 4rem 1rem;
+      position: relative;
+    }
+
+    /* 🔹 Capa semitransparente */
+    .form-overlay {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 6px 20px rgba(0,0,0,.2);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    legend { font-weight:600; }
+  </style>
 </head>
-
 <body>
+  <a class="visually-hidden-focusable" href="#contenido">Saltar al contenido</a>
 
-    <header>
-        <div class="logo">
-            <img src="../assets/img/Logo-titan svg.svg" alt="logo titan dis">
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm w-100">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html" aria-label="Ir al inicio">
+          <img src="../assets/img/Logo-titan svg.svg" alt="Logo TITAN Diseños" height="48" />
+        </a>
+
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuHeader"
+          aria-controls="menuHeader" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menuHeader">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./carrito.html">CARRITO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mates.html">MATES</a></li>
+            <li class="nav-item"><a class="nav-link active subrayado" aria-current="page" href="#">REGALOS EMPRESARIALES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./registro.html">REGISTRO</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main id="contenido">
+    <!-- Hero -->
+    <section class="container text-center py-5">
+      <h1 class="fw-bold mb-2">REGALOS EMPRESARIALES</h1>
+      <p class="text-muted mb-0">La mejor opción para tu empresa. Escribinos y armamos el pack ideal.</p>
+    </section>
+
+    <!-- Formulario con imagen de fondo -->
+    <section class="form-section">
+      <div class="form-overlay">
+        <form class="row g-3" novalidate>
+          <fieldset>
+            <legend class="float-none w-auto px-2 mb-3">¡Dejanos un mensaje!</legend>
+
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre y apellido</label>
+              <input type="text" class="form-control" id="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="empresa" class="form-label">Empresa</label>
+              <input type="text" class="form-control" id="empresa" placeholder="Ej: Titan SA">
+            </div>
+
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="tu@empresa.com" required>
+            </div>
+
+            <div class="col-md-6">
+              <label for="celular" class="form-label">Celular</label>
+              <input type="tel" class="form-control" id="celular" placeholder="+54 9 11 1234-5678">
+            </div>
+
+            <div class="col-md-6">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="ciudad" placeholder="Ej: Buenos Aires">
+            </div>
+
+            <div class="col-12">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea class="form-control" id="mensaje" rows="4" placeholder="Contanos qué necesitás (cantidades, logo, fecha de entrega, etc.)"></textarea>
+            </div>
+
+            <div class="col-12 text-center pt-3">
+              <button type="submit" class="btn btn-primary px-4">ENVIAR FORMULARIO</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-auto py-4 border-top bg-light w-100">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center gap-3 fs-4">
+          <a href="https://www.instagram.com/titan_dis/?next=%2F" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram" aria-label="Instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/channel/UCMlX-1X2raYXqAPegqYwlgQ" target="_blank" rel="noopener">
+            <i class="fa-brands fa-youtube" aria-label="YouTube"></i>
+          </a>
         </div>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="../Index.html">INICIO</a>
-                </li>
-                <li>
-                    <a href="./carrito.html">CARRITO</a>
-                </li>
-                <li>
-                    <a href="./mates.html">MATES</a>
-                </li>
-                <li><a class="subrayado" href="#">REGALOS EMPRESARIALES</a>
-                </li>
-                <li><a href="./registro.html">REGISTRO</a>
-                </li>
-            </ul>
-        </nav>
+        <button class="navbar-toggler custom-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#menuFooter"
+          aria-controls="menuFooter" aria-expanded="false" aria-label="Abrir menú del pie de página">
+          <span class="toggler-icon"></span><span class="toggler-icon"></span><span class="toggler-icon"></span>
+        </button>
 
-    </header>
-    <main>
-        <h1>REGALOS EMPRESARIALES</h1>
-
-        <section>
-            <h2>La mejor opcion para tu empresa</h2>
-            <p>tenemos las mejores opciones para los regalos de tu empesa, escribinos y te ayudamos</p>
-
-            <img src="../assets/img/combo_2.jpeg" alt="foto-combo2">
-
-        </section>
-        <!-- 
-        <section class="main-registo">
-            <form action="" method="post" enctype="application/x-www-form-urlencoded"></form>
-            <fieldset>
-                <legend>crea tu cuenta</legend>
-                <div>
-                    <label for="nombre-/-apellido"> Nombre/Apellido</label>
-                    <input type="text" name="nombre-/-apellido" id="">
-                </div>
-                <div>
-                    <label for="email"> Email</label>
-                    <input type="text" name="email" id="">
-                </div>
-                <div>
-                    <label for="rango-horario"> Rango horario</label>
-                    <input type="text" name="rango-horario" id="">
-                </div>
-                <div>
-                    <label for="empresa"> Empresa</label>
-                    <input type="text" name="empresa" id="">
-                </div>
-                <div>
-                    <label for="celular"> Celular</label>
-                    <input type="text" name="celular" id="">
-                </div>
-                <div>
-                    <label for="localidad"> Localidad>
-                        <input type="text" name="localidad" id="">
-                </div>
-                <div>
-                    <input type="submit" value="enviar formulario">
-                </div>
-            </fieldset>
-
-
-
-        </section> -->
-
-        <div class="container">
-            <form class="row g4 mt-3">
-                <fieldset class="border rounded-3 p-4">
-                    <legend class="float-none w-auto px-2">Dejanos un mensaje!</legend>
-
-                    <div class="col-4">
-                        <label for="nombre-apeliido-input" class="form-lebel"></label>
-                        <input type="Nombre-apelldio" class="form-control" id="nombre-apellido-input"
-                            placeholder="NOMBRE/APELLIDO">
-                    </div>
-
-                    <div class="col-4">
-                        <label for="emprea-input" class="form-lebel"></label>
-                        <input type="empresa-apelldio" class="form-control" id="empresa-input" placeholder="EMPRESA">
-                    </div>
-
-                    <div class="col-4">
-                        <label for="email-input" class="form-lebel"></label>
-                        <input type="email-apelldio" class="form-control" id="empresa-input" placeholder="EMAIL">
-                    </div>
-
-                    <div class="col-4">
-                        <label for="celular-input" class="form-lebel"></label>
-                        <input type="celular-apelldio" class="form-control" id="celular" placeholder="CELULAR">
-                    </div>
-                    <div class="col-4">
-                        <label for="empres-input" class="form-lebel"></label>
-                        <input type="empresa-apelldio" class="form-control" id="empresa-input" placeholder="EMPRESA">
-                    </div>
-                    <div class="col-4">
-                        <label for="localidad-input" class="form-lebel"></label>
-                        <input type="localidad-apelldio" class="form-control" id="LOCALIDAD-input" placeholder="CIUDAD">
-                    </div>
-
-                    <div class="col-12" style="text-align: center;">
-                        <button type="submit" class="btn btn-primary">
-                            ENVIAR FORMULARIO
-
-                        </button>
-                    </div>
-                </fieldset>
-            </form>
-
+        <div class="collapse navbar-collapse" id="menuFooter">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html">INICIO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./carrito.html">CARRITO</a></li>
+            <li class="nav-item"><a class="nav-link" href="./mates.html">MATES</a></li>
+            <li class="nav-item"><a class="nav-link active subrayado" aria-current="page" href="#">REGALOS EMPRESARIALES</a></li>
+            <li class="nav-item"><a class="nav-link" href="./registro.html">REGISTRO</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
+  </footer>
 
-    </main>
-
-
-    <footer>
-        <div>
-            <a href="https://www.instagram.com/titan_dis/?next=%2F" target="_blank"> <i
-                    class="fa-brands fa-instagram"></i> </a>
-            <a href="https://www.youtube.com/channel/UCMlX-1X2raYXqAPegqYwlgQ" target="_blank"> <i
-                    class="fa-brands fa-youtube"></i></a>
-        </div>
-        <div>
-            <ul>
-                <li>
-                    <a href="#">INICIO</a>
-                </li>
-                <li>
-                    <a href="./pages/carrito.html">CARRITO</a>
-                </li>
-                <li>
-                    <a href="./pages/mates.html">MATES</a>
-                </li>
-                <li><a class="subrayado" href="./pages/regalos-empresatiales.html">REGALOS EMPRESARIALES</a></li>
-                <li><a href="./pages/registro.html">REGISTRO</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
-
-    <!--BOOTSTRAP SCRIPT-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
