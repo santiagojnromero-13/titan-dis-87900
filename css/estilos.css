@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   margin: 0;
@@ -256,6 +257,71 @@ header nav ul {
 .grid-area,
 .grid-area img {
   aspect-ratio: 1/1;
+}
+
+.carrito-wrap {
+  padding: clamp(24px, 4vw, 56px);
+  padding-top: clamp(8px, 2vw, 24px);
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+.carrito-title {
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin-bottom: clamp(18px, 3vw, 28px);
+}
+
+/* grilla responsiva */
+.grid-area {
+  display: grid;
+  gap: 1.25rem;
+  justify-content: center;
+  margin-inline: auto;
+  width: 100%;
+  /* columnas por breakpoint */
+  grid-template-columns: minmax(260px, 1fr); /* móvil */
+}
+
+@media (min-width: 576px) { /* tablet */
+  .grid-area {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+@media (min-width: 992px) { /* desktop */
+  .grid-area {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  }
+}
+@media (min-width: 1200px) { /* desktop grande */
+  .grid-area {
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+  }
+}
+.grid-area img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  background: #fff;
+}
+
+.grid-area img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.grid-area, .grid-area * {
+  max-width: 100%;
+}
+
+.section-carrito {
+  padding-block: clamp(12px, 4vw, 48px);
 }
 
 /*# sourceMappingURL=estilos.css.map */
