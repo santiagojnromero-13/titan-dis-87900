@@ -109,7 +109,7 @@ header nav ul {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/combo_1.jpeg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/img/combo_1.webp") center/cover no-repeat;
 }
 #fondo-principal .hero-txt {
   width: 500px;
