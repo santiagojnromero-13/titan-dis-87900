@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
+// ==========================
+// Variables
+// ==========================
 $font-body: "Roboto", sans-serif;
 $font-heading: "Oswald", sans-serif;
 
@@ -13,7 +15,26 @@ $color-hero: rgba(250, 250, 248, 0.685);
 $color-card-border: #75dd30;
 $color-grid-bg: #3f60cfd4;
 
+// ==========================
+// Mixins & Extends
+// ==========================
+@mixin toggler-icon($color: #000) {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background-color: $color;
+  transition: 0.3s;
+}
 
+%title-base {
+  text-align: center;
+  font-family: $font-heading;
+}
+
+// ==========================
+// Reset & Base
+// ==========================
 * {
   margin: 0;
   padding: 0;
@@ -23,11 +44,17 @@ ul {
   list-style: none;
 }
 
-
 body {
   font-family: $font-body;
   font-weight: 300;
   font-style: italic;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -36,13 +63,13 @@ a {
 }
 
 h1 {
+  @extend %title-base;
   color: $color-h1;
-  text-align: center;
 }
 
 h2 {
+  @extend %title-base;
   color: $color-h2;
-  text-align: center;
 }
 
 h3 {
@@ -59,7 +86,9 @@ h3 {
   line-height: 2;
 }
 
-
+// ==========================
+// Logo
+// ==========================
 .logo {
   width: 8%;
 
@@ -68,34 +97,14 @@ h3 {
   }
 }
 
-li>a {
+// ==========================
+// Navbar & Footer
+// ==========================
+li > a {
   color: #000;
   text-decoration: none;
   font-size: 15px;
 }
-
-.title {
-  font-family: $font-heading;
-  font-size: 50px;
-  font-weight: 500;
-
-  span {
-    font-weight: 600;
-    color: rgb(54, 54, 56);
-  }
-}
-
-.fa-instagram,
-.fa-youtube {
-  color: brown;
-  font-size: 1em;
-}
-
-.carrito {
-  width: 450px;
-  height: 500px;
-}
-
 
 header,
 footer {
@@ -122,13 +131,28 @@ header {
   }
 }
 
+.custom-toggler {
+  border: none;
 
+  &:focus {
+    box-shadow: none;
+  }
+
+  .toggler-icon {
+    @include toggler-icon($color-h1);
+  }
+}
+
+// ==========================
+// Hero Section
+// ==========================
 #fondo-principal {
   height: 400px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background: center / cover repeat url(../assets/img/combo_1.jpeg);
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+              url("../assets/img/combo_1.jpeg") center/cover no-repeat;
 
   .hero-txt {
     width: 500px;
@@ -136,9 +160,45 @@ header {
     padding: 25px;
     text-align: center;
     background-color: $color-hero;
+    animation: fadeInUp 1s ease-out;
   }
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ==========================
+// Secciones Generales
+// ==========================
+.title {
+  font-family: $font-heading;
+  font-size: 50px;
+  font-weight: 500;
+
+  span {
+    font-weight: 600;
+    color: rgb(54, 54, 56);
+  }
+}
+
+.fa-instagram,
+.fa-youtube {
+  color: brown;
+  font-size: 1em;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2) rotate(-5deg);
+  }
+}
 
 .title-nuestros-mates {
   color: #000;
@@ -184,213 +244,145 @@ header {
   }
 }
 
+// ==========================
+// Cards (Mates, etc.)
+// ==========================
+.card {
+  border: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  height: 100%;
 
-.grid-area {
-  display: grid;
-  width: 80vw;
-  height: 80vh;
-  margin: 0 auto;
-  gap: 10px;
-  position: relative;
-  padding: 7px;
-  background-color: $color-grid-bg;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,.12);
+  }
 
-  grid-template-columns: 2fr repeat(2, 1.5fr) 3fr;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-areas:
-    "mate-arg-qatar mate-boca mate-boca mate-disney"
-    "termo-dimaria   mate-boca mate-boca combo-2"
-    "termo-dimaria   mate-boca mate-boca combo-2";
-
-  img {
-    width: 100%;
-    height: 100%;
-    min-height: 0;
+  .card-img-top {
+    aspect-ratio: 1 / 1;
     object-fit: cover;
   }
 
-  .mate-boca {
-    grid-area: mate-boca;
-  }
-
-  .termo-dimaria {
-    grid-area: termo-dimaria;
-  }
-
-  .mate-arg-qatar {
-    grid-area: mate-arg-qatar;
-  }
-
-
-  .mate-disney {
-    grid-area: mate-disney;
-    object-position: center top;
-  }
-
-  .combo-2 {
-    grid-area: combo-2;
+  .card-title {
+    margin-bottom: .25rem;
   }
 }
 
+.btn-primary {
+  background-color: #111;
+  border-color: #111;
 
-.card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.img-ajuste {
-  height: 50%;
-  object-fit: cover;
-}
-
-.row {
-  .col-12:nth-child(7) .card-img-top {
-    object-position: 0 -62px;
-  }
-
-  .col-12:nth-child(3) .card-img-top {
-    object-position: top;
+  &:hover {
+    background-color: #000;
+    border-color: #000;
   }
 }
 
+// ==========================
+// Carrito Productos
+// ==========================
+.product {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  transition: transform .25s ease, box-shadow .25s ease;
 
-@media screen and (max-width: 768px) {
-  header .desktop {
-    display: none;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,.12);
   }
 
-  .grid-area {
-    width: 90vw;
+  img {
+    display: block;
+    width: 100%;
     height: auto;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "mate-boca"
-      "termo-dimaria"
-      "mate-arg-qatar"
-      "mate-disney"
-      "combo-2";
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
   }
 }
 
-
-.grid-area {
- 
-  background: transparent !important;
-
-  
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1400px;
-
-  
-  gap: 1.25rem;
-
-  
-  grid-template-columns: minmax(260px, 1fr);
-  
+// ==========================
+// Formulario Empresariales
+// ==========================
+.form-section {
+  background: url("../assets/img/combo_2.jpeg") no-repeat center center/cover;
+  padding: 4rem 1rem;
+  position: relative;
 }
 
-@media (min-width: 576px) {
-
-  
-  .grid-area {
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
-  }
+.form-overlay {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,.2);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@media (min-width: 992px) {
-
-
-  .grid-area {
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-  }
+legend {
+  font-weight: 600;
 }
 
-
-.grid-area img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
- 
-  object-fit: cover;
-
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, .08);
-  transition: transform .2s ease, box-shadow .2s ease;
+// ==========================
+// Formulario Registro
+// ==========================
+.form-wrapper {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
 }
 
-.grid-area img:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, .12);
-}
-
-
-.grid-area,
-.grid-area img {
-  aspect-ratio: 1 / 1;
-}
-
-
-
-.carrito-wrap {
-  padding: clamp(24px, 4vw, 56px);
-  padding-top: clamp(8px, 2vw, 24px);
-  max-width: 1280px;
-  margin-inline: auto;
-}
-
-
-.carrito-title {
-  text-align: center;
-  font-weight: 800;
-  letter-spacing: .5px;
-  margin-bottom: clamp(18px, 3vw, 28px);
-}
-
-/* grilla responsiva */
+// ==========================
+// Grids
+// ==========================
 .grid-area {
   display: grid;
   gap: 1.25rem;                  
   justify-content: center;      
   margin-inline: auto;
   width: 100%;
+  background-color: transparent; // 🔹 Ahora por defecto sin fondo
+  grid-template-columns: minmax(260px, 1fr);
 
-  /* columnas por breakpoint */
-  grid-template-columns: minmax(260px, 1fr);                       /* móvil */
-}
-@media (min-width: 576px) { /* tablet */
-  .grid-area { grid-template-columns: repeat(2, minmax(260px, 1fr)); }
-}
-@media (min-width: 992px) { /* desktop */
-  .grid-area { grid-template-columns: repeat(3, minmax(280px, 1fr)); }
-}
-@media (min-width: 1200px) { /* desktop grande */
-  .grid-area { grid-template-columns: repeat(4, minmax(260px, 1fr)); }
-}
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+    background: #fff;  
 
-
-.grid-area img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;          
-  object-fit: cover;             
-  object-position: center;
-  border-radius: 14px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.08);
-  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
-  background: #fff;              
-}
-.grid-area img:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0,0,0,.12);
+    }
+  }
 }
 
+// 🔹 Fondo azul solo en la home si lo necesitás
+body.home .grid-area {
+  background-color: $color-grid-bg;
+}
 
-.grid-area, .grid-area * { max-width: 100%; }
+// ==========================
+// Media Queries (Mobile First)
+// ==========================
+@media (min-width: 576px) { 
+  .grid-area { grid-template-columns: repeat(2, 1fr); }
+}
 
+@media (min-width: 992px) { 
+  .grid-area { grid-template-columns: repeat(3, 1fr); }
+}
 
-.section-carrito { padding-block: clamp(12px, 4vw, 48px); }
+@media (min-width: 1200px) { 
+  .grid-area { grid-template-columns: repeat(4, 1fr); }
+}
